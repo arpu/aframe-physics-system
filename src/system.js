@@ -8,10 +8,13 @@ var LocalDriver = require('./drivers/local-driver'),
     NetworkDriver = require('./drivers/network-driver'),
     AmmoDriver = require('./drivers/ammo-driver');
 
+declare var AFRAME;
+declare var THREE;
+
 /**
  * Physics system.
  */
-module.exports = AFRAME.registerSystem('physics', {
+AFRAME.registerSystem('physics', {
   schema: {
     // CANNON.js driver type
     driver:                         { default: 'local', oneOf: ['local', 'worker', 'network', 'ammo'] },
